@@ -1,0 +1,45 @@
+.window-height {
+	min-height: 864px;
+}
+
+.padding-35 {
+	padding: 35px;
+}
+
+.padding-5 {
+	padding: 5px;
+}
+
+.col-sm-3 {
+  width: 31.9%;
+}
+
+.next-prev-button {
+  color: #fff;
+  background-color: #7b585a;
+  border-color: #7b585a;
+  border: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border-radius: 0.375rem;
+}
+
+.next-prev-button:hover,
+.next-prev-button:active,
+.next-prev-button:focus,
+.next-prev-button.active {
+  background: #7b585a;
+  color: #ffffff;
+  border-color: #7b585a;
+}
+
+.next-prev-button:disabled{
+  background-color: rgb(123 88 91 / 52%);
+}
+
+.width-205 {
+  width: 205px;
+}

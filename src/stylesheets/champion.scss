@@ -1,0 +1,92 @@
+.champ-remove-button {
+  color: #fff;
+  background-color: #372526;
+  border-color: #372526;
+  border: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border-radius: 0.375rem;
+}
+
+.champ-remove-button:hover,
+.champ-remove-button:active,
+.champ-remove-button:focus,
+.champ-remove-button.active {
+  background: #372526;
+  color: #ffffff;
+  border-color: #372526;
+}
+
+.champion-card {
+	border: #bbb0b1 solid 1px;
+  border-radius: 5px;
+  background: #e0d0d1;
+  text-align: center;
+  margin: 10PX;
+}
+
+.champion-div{
+    width: 90%;
+    margin: auto;
+}
+
+.champ-add-button:disabled{
+  background-color: rgb(123 88 91 / 52%);
+}
+
+.champ-add-button {
+  color: #372526;
+  background-color: #fff;
+  border-color: #fff;
+  border: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border-radius: 0.375rem;
+}
+
+.champ-add-button:hover,
+.champ-add-button:active,
+.champ-add-button:focus,
+.champ-add-button.active {
+  background: #fff;
+  color: #372526;
+  border-color: #fff;
+}
+
+.champ-add-button:disabled{
+  background-color: #fff;
+}
+
+.modal-header {
+  background-color: rgb(193, 178, 179);
+}
+
+.modal-body {
+  background-color: #e0d0d1;
+}
+
+.table {
+  text-align: left;
+}
+
+.link-danger {
+  color: #202528!important;
+}
+
+.link-danger:hover,
+.link-danger:active,
+.link-danger:focus {
+  color: #533a3d!important;
+}
+
+.image-padding {
+  padding-bottom: 10px;
+}
+
+// #6b0c12

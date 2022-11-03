@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ChampionModal({champion}) {
-  const {id, name, armor, attackrange, videogame_versions, big_image_url} = champion;
+  const {id, name, armor, armorperlevel, attackrange, attackdamageperlevel, videogame_versions, big_image_url, crit, hp, hpperlevel, mp, movespeed, mpregen, spellblock, spellblockperlevel} = champion;
 
   return (
     <>
@@ -23,23 +23,39 @@ export default function ChampionModal({champion}) {
               <table className='table'>
                 <tbody>
                   <tr>
-                    <th>ID:</th>
+                    <th>Id :</th>
                     <td>{id}</td>
                   </tr>
                   <tr>
-                    <th>ARMOR:</th>
-                    <td>{armor}</td>
+                    <th>Armor (Armor Per Level) :</th>
+                    <td>{armor} ({armorperlevel})</td>
                   </tr>
                   <tr>
-                    <th>ATTACKRANGE:</th>
-                    <td>{attackrange}</td>
+                    <th>Attackrange (Attack Damage Per Level) :</th>
+                    <td>{attackrange} ({attackdamageperlevel})</td>
                   </tr>
                   <tr>
-                    <th>VIDEO GAME VERSIONS:</th>
+                    <th>Spellblock (Spell Block Per Level) :</th>
+                    <td>{spellblock} ({spellblockperlevel})</td>
+                  </tr>
+                  <tr>
+                    <th>Crit | Hp | Hpper Level :</th>
+                    <td>{crit} | {hp} | {hpperlevel} </td>
+                  </tr>
+                  <tr>
+                    <th>Mp | Move Speed | Mpregen :</th>
+                    <td>{mp} | {movespeed} | {mpregen} </td>
+                  </tr>
+                  <tr>
+                    <th>VideoGame Versions :</th>
                     <td>{videogame_versions.join(' * ')}</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div className='modal-footer'>
+              <button type="button" className="champ-remove-button" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

@@ -1,12 +1,15 @@
+.header {
+  font-family: 'Black Ops One';
+}
+
 .dark-background {
-	background-color: #2e080a;
+	background-color: #372526;
   color: white;
-	padding: 10px;
 }
 
 a, a:hover {
 	text-decoration: none;
-	color: white;
+	// color: white !important;
 }
 
 .footer {

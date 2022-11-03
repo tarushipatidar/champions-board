@@ -1,9 +1,14 @@
+body {
+  background-color: #958889c9;
+  font-family: 'Allerta Stencil';
+}
+
 .window-height {
 	min-height: 864px;
 }
 
-.padding-35 {
-	padding: 35px;
+.padding-10 {
+	padding: 10px;
 }
 
 .padding-5 {
@@ -16,7 +21,7 @@
 
 .next-prev-button {
   color: #fff;
-  background-color: #7b585a;
+  background-color: #6e4f51;
   border-color: #7b585a;
   border: 1px;
   padding-left: 10px;
@@ -31,7 +36,7 @@
 .next-prev-button:active,
 .next-prev-button:focus,
 .next-prev-button.active {
-  background: #7b585a;
+  background: #6e4f51;
   color: #ffffff;
   border-color: #7b585a;
 }
@@ -40,6 +45,31 @@
   background-color: rgb(123 88 91 / 52%);
 }
 
-.width-205 {
-  width: 205px;
+.width-225 {
+  width: 225px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.btn-close:focus {
+  box-shadow: 0 0 0 0.25rem rgb(168 155 155 / 64%);
+}
+
+.pagination-focus {
+  border: solid 1px #7b585a;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  color: #000000;
+  border-color: #e0d0d1;
+  box-shadow: 0 0 0 0.25rem rgba(134, 121, 121, 0.3);
+}
+
+.form-select:focus {
+  color: #000000;
+  border-color: #e0d0d1;
+  box-shadow: 0 0 0 0.25rem rgba(134, 121, 121, 0.3);
 }

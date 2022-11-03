@@ -7,10 +7,10 @@ import ChampionModal from './ChampionModal';
 export default function ChampionCard({champion}) {
   const watchList = useSelector((state) => state.updateWatchList);
   const dispatch = useDispatch();
-  const {id, name, image_url} = champion;
+  const {id, name, image_url, attackrange, attackdamage, armor} = champion;
 
   useEffect(() => {
-		localStorage.setItem('watchList', JSON.stringify(watchList));
+		localStorage.setItem('watchList', JSON.stringify(watchList)); // set watchlist to localStorage to get its current data for initial state
 	}, [watchList]);
 
   const updateFromWatchList = (e, type) => {
@@ -26,19 +26,27 @@ export default function ChampionCard({champion}) {
     <>
       <ChampionModal champion={champion} />
 
-      {/* Button For Modal */}
       <Link className="link-danger" data-bs-toggle="modal" data-bs-target={"#myModal" + String(id)}>
-        <b>{id} - {name}</b>
-        <br />
-        <img src={image_url} className="image-padding" alt="image not found" />
+        <div className='row padding-10'>
+          <div className='col-sm-4'>
+          <img src={image_url} className="image-padding" alt="image not found" style={{width: '100%'}} />
+          </div>
+          <div className='col-sm-8' style={{textAlign: 'left'}}>
+            <h4 style={{fontFamily: 'Black Ops One'}}>{name}</h4>
+            <ul>
+              <li style={{fontWeight: 'bold'}}>ID: {id}</li>
+              <li>Armor: {armor}</li>
+              <li>Attackrange: {attackrange}</li>
+              <li>Attackdamage: {attackdamage}</li>
+            </ul>
+          </div>
+        </div>
       </Link>
 
-      {/* Button To Add Champion On WatchList */}
-      <br />
       {
         watchList.hasOwnProperty(id) ?
-        <button className='champ-remove-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Remove')} > Remove </button> :
-        <button className='champ-add-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Add')} > Add </button>
+        <button className='champ-remove-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Remove')} > Watch </button> :
+        <button className='champ-add-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Add')} > UnWatch </button>
       }
     </>
   )

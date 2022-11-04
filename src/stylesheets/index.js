@@ -1,3 +1,3 @@
-import './header-footer.scss';
+import './navbar.scss';
 import './dashboard.scss';
 import './champion.scss';

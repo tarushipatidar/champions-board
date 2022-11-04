@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 
-export default function HeaderFooter() {
+export default function Navbar() {
   const watchList = useSelector((state) => state.updateWatchList);
   const watchList_length = Object.keys(watchList).length;
 
@@ -24,6 +24,7 @@ export default function HeaderFooter() {
       {/* Body */}
       <div className='container-fluid padding-10' style={{paddingBottom: '60px' }}>
         <Outlet />
+        <br/>
       </div>
 
       {/* Footer */}

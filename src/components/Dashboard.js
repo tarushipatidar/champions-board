@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ChampionsList from './ChampionsList';
-import axios from 'axios';
+import ApiCall from './ApiCall';
 
 export default function Dashboard() {
 	const token = '6Vfg1oVtqrBMS2AxDm3HH2Rrq8kWQf9z0XBGyGeBIM9d2p72RG4';
@@ -21,9 +21,8 @@ export default function Dashboard() {
   const champions_per_page = 9;
 
 	useEffect(() => {
-    axios.get(`https://api.pandascore.co/lol/champions?page[number]=${page}&page[size]=${champions_per_page}&search[name]=${searchText}&token=${token}`)
-    // .then((r) => r.json())
-    .then((response) => sortType === 'desc' ? setChampions(response.data) : setChampions(response.data.slice().reverse()));
+    ApiCall('GET', `https://api.pandascore.co/lol/champions?page[number]=${page}&page[size]=${champions_per_page}&search[name]=${searchText}&token=${token}`)
+    .then((data) => sortType === 'desc' ? setChampions(data) : setChampions(data.slice().reverse()));
 	}, [page, searchText]);
 
   const sortChampions = (e) => {
@@ -79,8 +78,8 @@ export default function Dashboard() {
         </div>
         {/* sort selection bar */}
         <div className="p-2 bd-highlight">
-          <select className='form-select' onChange={sortChampions} style={{float: 'right'}}>
-            <option selected disabled>Sort Champions By Id</option>
+          <select className='form-select' onChange={sortChampions} style={{float: 'right'}} defaultValue='DEFAULT'>
+            <option value="DEFAULT" disabled>Sort Champions By Id</option>
             <option value="desc">IDs in Descending</option>
             <option value="asc">IDs in Ascending</option>
           </select>

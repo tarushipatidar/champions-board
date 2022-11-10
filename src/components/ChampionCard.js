@@ -29,7 +29,7 @@ export default function ChampionCard({champion}) {
       <Link className="link-danger" data-bs-toggle="modal" data-bs-target={"#myModal" + String(id)}>
         <div className='row padding-10'>
           <div className='col-sm-4'>
-          <img src={image_url} className="image-padding" alt="image not found" style={{width: '100%'}} />
+          <img src={image_url} alt="image not found" style={{width: '100%'}} />
           </div>
           <div className='col-sm-8' style={{textAlign: 'left'}}>
             <h4 style={{fontFamily: 'Black Ops One'}}>{name}</h4>

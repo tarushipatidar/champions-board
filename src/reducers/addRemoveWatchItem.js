@@ -4,7 +4,7 @@ if (initWatchList === null || initWatchList === 'undefined' || initWatchList ===
 	initWatchList = {};
 } else {
 	initWatchList = JSON.parse(initWatchList);
-}
+};
 
 const updateWatchList = (state = initWatchList, action) => {
   let new_state = { ...state };
@@ -20,6 +20,6 @@ const updateWatchList = (state = initWatchList, action) => {
     };
 		default: return state;
 	}
-}
+};
 
 export default updateWatchList;

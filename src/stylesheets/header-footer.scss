@@ -1,0 +1,54 @@
+.header {
+  font-family: 'Black Ops One';
+}
+
+.dark-background {
+	background-color: #372526;
+  color: white;
+}
+
+.header-link, .header-link:hover {
+  color: white;
+}
+
+a, a:hover {
+	text-decoration: none;
+	// color: white !important;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.badge {
+  background-color: #ffffff;
+  color: black;
+}
+
+.btn-watchList, .btn:first-child:hover {
+  background-color: white;
+  color: #372526;
+}
+
+.bg-danger {
+  // --bs-bg-opacity: 1;
+  background-color: #aba1a1 !important;
+  color: #372527 !important;
+}
+
+.profile-image {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.dropdown-item:hover {
+  color: #372526;
+  background-color: #ffffff;
+}
+
+.logout-link, .logout-link:hover {
+  color: #372526;
+}

@@ -1,15 +1,12 @@
-import updateWatchList from "./reducers/addRemoveWatchItem";
 import { configureStore } from "@reduxjs/toolkit";
+import updateWatchList from "./reducers/addRemoveWatchItem";
+import updateCurrentUser from "./reducers/logInOutUser"
 
 const store = configureStore({
-    reducer: {
-        updateWatchList: updateWatchList,
-    }
+  reducer: {
+    updateWatchList: updateWatchList,
+    updateCurrentUser: updateCurrentUser,
+  }
 })
-
-// import rootReducer from "./reducers/index";
-// import { createStore } from "redux";
-
-// const store = createStore(rootReducer);
 
 export default store;

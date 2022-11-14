@@ -1,6 +1,7 @@
 body {
   background-color: #958889c9;
   font-family: 'Allerta Stencil';
+  color: #372526;
 }
 
 .window-height {
@@ -68,8 +69,33 @@ img {
   box-shadow: 0 0 0 0.25rem rgba(134, 121, 121, 0.3);
 }
 
+.form-select {
+  width: auto;
+}
+
 .form-select:focus {
   color: #000000;
   border-color: #e0d0d1;
   box-shadow: 0 0 0 0.25rem rgba(134, 121, 121, 0.3);
+}
+
+.page-title {
+  background: #cdbaba;
+  border: 2px solid #372526;
+  border-radius: 10px;
+  width: -webkit-fill-available;
+  text-align: center;
+}
+
+.loader {
+  position: fixed;
+  z-index: 999;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
 }

@@ -8,7 +8,7 @@ import UserProfile from './UserProfile';
 
 export default function HeaderFooter() {
 	const [currentUser, watchList] = useSelector((state) => [state.updateCurrentUser, state.updateWatchList]);
-	const watchList_length = Object.keys(watchList).length;
+	const watchList_length = watchList.length;
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -35,26 +35,27 @@ export default function HeaderFooter() {
 						<h3 className='font-logo'>Champions</h3>
 					</Link>
 
-					<div style={{display: 'flex'}}>
-						<div style={{display: 'inline-block', paddingRight: '10px', paddingTop: '5px'}}>
-							<Link to='/watchedchampions' className='btn btn-watchList position-relative'>
-								WatchList
-								<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-									{watchList_length}
-								</span>
+					{
+						Object.keys(currentUser).length === 0 ?
+							<Link onClick={login} className='header-link'>
+								LogIn With Google
 							</Link>
-						</div>
-
-						<div style={{float: 'right', paddingLeft: '15px', margin: 'auto'}}>
-							{ Object.keys(currentUser).length === 0 ?
-									<Link onClick={login} className='header-link'>
-										LogIn With Google
+						:
+							<div style={{display: 'flex'}}>
+								<div style={{display: 'inline-block', paddingRight: '10px', paddingTop: '5px'}}>
+									<Link to='/watchedchampions' className='btn btn-watchList position-relative'>
+										WatchList
+										<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+											{watchList_length}
+										</span>
 									</Link>
-								:
+								</div>
+
+								<div style={{float: 'right', paddingLeft: '15px', margin: 'auto'}}>
 									<UserProfile />
-							}
-						</div>
-					</div>
+								</div>
+							</div>
+          }
 				</div>
 			</nav>
 

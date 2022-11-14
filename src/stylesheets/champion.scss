@@ -4,14 +4,19 @@
   background: #e0d0d1;
   text-align: center;
   margin: 10px;
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.champ-short-description {
+  text-align: left;
+  height: 155px;
+  overflow: hidden;
 }
 
 .champ-remove-button {
   color: #fff;
   background-color: #372526;
-  border-color: #372526;
-  border: 1px;
+  border: #372526 solid 2px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -27,14 +32,13 @@
 .champ-remove-button.active {
   background: #372526;
   color: #ffffff;
-  border-color: #372526;
+  border: #372526 solid 2px;
 }
 
 .champ-add-button {
   color: #372526;
-  background-color: rgba(123, 88, 91, 0.52);
-  border-color: #fff;
-  border: 1px;
+  background-color: #4b11111f;
+  border: #372526 solid 2px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -48,9 +52,9 @@
 .champ-add-button:active,
 .champ-add-button:focus,
 .champ-add-button.active {
-  background: rgba(123, 88, 91, 0.52);
   color: #372526;
-  border-color: #fff;
+  background-color: #4b11111f;
+  border: #372526 solid 2px;
 }
 
 .champ-add-button:disabled{

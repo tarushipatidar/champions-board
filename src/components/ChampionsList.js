@@ -8,7 +8,7 @@ export default function ChampionsList({champions}) {
       {
         champions.length > 0 ?
         champions.map((champion) => <div key={champion.id} className="col-sm-3 padding-5 champion-card"> <ChampionCard champion={champion} /> </div> ) :
-        <h4 className='text-center'>No Records Found</h4>
+        <h4 className='text-center' style={{paddingTop: '10%'}}>No Records Found</h4>
       }
     </div>
   )

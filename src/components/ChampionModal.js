@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function ChampionModal({champion}) {
-  const {id, name, armor, armorperlevel, attackrange, attackdamageperlevel, videogame_versions, big_image_url, crit, hp, hpperlevel, mp, movespeed, mpregen, spellblock, spellblockperlevel} = champion;
+export default function ChampionModal({ champion }) {
+  const {
+    id, name, armor, armorperlevel, attackrange, attackdamageperlevel, videogame_versions,
+    big_image_url, crit, hp, hpperlevel, mp, movespeed, mpregen, spellblock, spellblockperlevel
+  } = champion;
 
   return (
     <>
@@ -19,7 +22,7 @@ export default function ChampionModal({champion}) {
             {/* Modal body */}
             <div className="modal-body">
               <img src={big_image_url} className="image-padding" alt="image not found" />
-              
+
               <table className='table'>
                 <tbody>
                   <tr>
@@ -28,7 +31,7 @@ export default function ChampionModal({champion}) {
                   </tr>
                   <tr>
                     <th>Armor (Armor Per Level) :</th>
-                    <td>{armor} ({armorperlevel})</td>
+                    <td>{armor || '-'} ({armorperlevel})</td>
                   </tr>
                   <tr>
                     <th>Attackrange (Attack Damage Per Level) :</th>

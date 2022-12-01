@@ -12,17 +12,17 @@ export default function HeaderFooter() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-    localStorage.setItem('currentUser', JSON.stringify(currentUser));
-  } , [currentUser]);
+		localStorage.setItem('currentUser', JSON.stringify(currentUser));
+	}, [currentUser]);
 
 	const login = useGoogleLogin({
 		onSuccess: response => {
-			ApiCall('GET', 'https://www.googleapis.com/oauth2/v3/userinfo', { headers: { 'Authorization':  `Bearer ${response.access_token}`} })
-			.then((res) => {
-				console.log(res);
-				dispatch(logInUser(res));
-			})
-			.catch((error) => console.log(error));
+			ApiCall('GET', 'https://www.googleapis.com/oauth2/v3/userinfo', { headers: { 'Authorization': `Bearer ${response.access_token}` } })
+				.then((res) => {
+					console.log(res);
+					dispatch(logInUser(res));
+				})
+				.catch((error) => console.log(error));
 		}
 	});
 
@@ -40,9 +40,9 @@ export default function HeaderFooter() {
 							<Link onClick={login} className='header-link'>
 								LogIn With Google
 							</Link>
-						:
-							<div style={{display: 'flex'}}>
-								<div style={{display: 'inline-block', paddingRight: '10px', paddingTop: '5px'}}>
+							:
+							<div style={{ display: 'flex' }}>
+								<div style={{ display: 'inline-block', paddingRight: '10px', paddingTop: '5px' }}>
 									<Link to='/watchedchampions' className='btn btn-watchList position-relative'>
 										WatchList
 										<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -51,11 +51,11 @@ export default function HeaderFooter() {
 									</Link>
 								</div>
 
-								<div style={{float: 'right', paddingLeft: '15px', margin: 'auto'}}>
+								<div style={{ float: 'right', paddingLeft: '15px', margin: 'auto' }}>
 									<UserProfile />
 								</div>
 							</div>
-          }
+					}
 				</div>
 			</nav>
 

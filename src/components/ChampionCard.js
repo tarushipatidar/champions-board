@@ -10,10 +10,11 @@ export default function ChampionCard({ champion }) {
   const { id, name, image_url, attackrange, attackdamage, armor } = champion;
 
   useEffect(() => {
-    localStorage.setItem('watchList', JSON.stringify(watchList)); // set watchlist to localStorage to get its current data for initial state
+    // set watchlist to localStorage to get its current data for initial state. By doing this after page refresh data will not loose.
+    localStorage.setItem('watchList', JSON.stringify(watchList));
   }, [watchList]);
 
-  const updateFromWatchList = (e, type) => {
+  const updateToWatchList = (e, type) => {
     if (Object.keys(currentUser).length === 0) {
       alert('You Need To Login First!');
     } else {
@@ -49,8 +50,8 @@ export default function ChampionCard({ champion }) {
 
       {
         watchList.find((ch) => ch.id === champion.id) ?
-          <button className='champ-remove-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Remove')} > UnWatch </button> :
-          <button className='champ-add-button' value={JSON.stringify(champion)} onClick={(e) => updateFromWatchList(e, 'Add')} > Watch </button>
+          <button className='champ-remove-button' value={JSON.stringify(champion)} onClick={(e) => updateToWatchList(e, 'Remove')} > UnWatch </button> :
+          <button className='champ-add-button' value={JSON.stringify(champion)} onClick={(e) => updateToWatchList(e, 'Add')} > Watch </button>
       }
     </>
   )

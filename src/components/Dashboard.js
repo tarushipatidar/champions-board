@@ -5,20 +5,21 @@ import Pagination from './Pagination';
 import SearchBar from './SearchBar';
 import SortOptions from './SortOptions';
 import Loader from './Loader';
+import { sortArrayOfObjectByKey } from '../functions/SortArrayOfObjectByKey';
 
 export default function Dashboard() {
-  const token = '6Vfg1oVtqrBMS2AxDm3HH2Rrq8kWQf9z0XBGyGeBIM9d2p72RG4';
+  const token = '6Vfg1oVtqrBMS2AxDm3HH2Rrq8kWQf9z0XBGyGeBIM9d2p72RG4'; // token used while access champions api
   const [champions, setChampions] = useState([]); // champions list in array
-  const [is_champions_loaded, setIsChampionsLoaded] = useState(false);
-  const [page, setPage] = useState(1); // use for pagination
-  const [searchText, setSearchText] = useState(''); // search by name
-  const [sortType, setSortType] = useState('default'); // sort by name or id
+  const [is_champions_loaded, setIsChampionsLoaded] = useState(false); // used for showing a page loader till the champions are not fetched
+  const [page, setPage] = useState(1); // used for tracking page number (pagination)
+  const [searchText, setSearchText] = useState(''); // this state used while searching champions by their name
+  const [sortType, setSortType] = useState('default'); // this state manage the current sort type selected. Find all sort options from the component SortOptions
   const champions_per_page = 9;
 
   useEffect(() => {
     ApiCall('GET', `https://api.pandascore.co/lol/champions?page[number]=${page}&page[size]=${champions_per_page}&search[name]=${searchText}&token=${token}`)
       .then((data) => {
-        if(sortType === 'default') {
+        if (sortType === 'default') {
           setChampions(data);
         } else {
           sortChampions(sortType, data);
@@ -28,19 +29,8 @@ export default function Dashboard() {
   }, [page, searchText]);
 
   const sortChampions = (sort_type, data = champions) => {
-    const unordered_champ = {};
-
-    data.map((ch) => unordered_champ[ch[sort_type]] = ch);
-
-    const ordered_champ = Object.keys(unordered_champ).sort().reduce(
-      (obj, key) => {
-        obj[key] = unordered_champ[key];
-        return obj;
-      },
-      {}
-    );
-
-    setChampions(Object.values(ordered_champ));
+    const ordered_champ = sortArrayOfObjectByKey(data, sort_type);
+    setChampions(ordered_champ);
   };
 
   const updateSortType = (e) => {
@@ -68,9 +58,9 @@ export default function Dashboard() {
             <ChampionsList champions={champions} />
             <Pagination page={page} setPage={setPage} disable={champions.length < champions_per_page} />
           </>
-        :
+          :
           <Loader />
       }
-		</>
+    </>
   )
 }

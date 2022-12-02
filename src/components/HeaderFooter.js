@@ -69,7 +69,7 @@ export default function HeaderFooter() {
 			</div>
 
 			{/* Footer */}
-			<div className='dark-background text-center footer padding-10'>
+			<div className='dark-background text-center footer'>
 				<p>© 2022 TPG - Created By Tarushi Patidar (Software Engineer).</p>
 			</div>
 		</>

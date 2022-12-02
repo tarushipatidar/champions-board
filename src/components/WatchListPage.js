@@ -46,16 +46,22 @@ export default function WatchListPage() {
 
 	return (
 		<>
-			<div className="d-flex justify-content-between">
-				{/* search bar */}
-				<SearchBar setSearchText={setSearchText} setPage={setPage} />
+			<nav className="navbar navbar-expand-lg">
+        <div className="container-fluid">
+          <p className='page-title'>Watch List</p> {/* page title */}
 
-				{/* page title */}
-				<div className="p-2 bd-highlight page-title"><h4>Watch List</h4></div>
+          <div style={{ display: 'flex' }}>
+            <div style={{ paddingRight: '5px' }}>
+              <SearchBar setSearchText={setSearchText} setPage={setPage} /> {/* search bar */}
+            </div>
 
-				{/* sort selection bar */}
-				<SortOptions updateSortType={updateSortType} />
-			</div>
+            <div style={{ paddingLeft: '5px' }}>
+              <SortOptions updateSortType={updateSortType} /> {/* sort selection bar */}
+            </div>
+          </div>
+        </div>
+      </nav>
+
 			{
 				is_champions_loaded ?
 					<>

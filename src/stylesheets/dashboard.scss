@@ -63,6 +63,10 @@ img {
   border-radius: 5px;
 }
 
+.form-control {
+  width: 11rem;
+}
+
 .form-control:focus {
   color: #000000;
   border-color: #e0d0d1;
@@ -71,6 +75,7 @@ img {
 
 .form-select {
   width: auto;
+  width: 11rem;
 }
 
 .form-select:focus {
@@ -80,11 +85,13 @@ img {
 }
 
 .page-title {
-  background: #cdbaba;
-  border: 2px solid #372526;
-  border-radius: 10px;
-  width: -webkit-fill-available;
-  text-align: center;
+  font-size: larger;
+  margin-bottom: 0rem;
+  // background: #cdbaba;
+  // border: 2px solid #372526;
+  // border-radius: 10px;
+  // width: -webkit-fill-available;
+  // text-align: center;
 }
 
 .loader {

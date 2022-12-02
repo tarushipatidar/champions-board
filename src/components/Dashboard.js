@@ -7,6 +7,9 @@ import SortOptions from './SortOptions';
 import Loader from './Loader';
 import { sortArrayOfObjectByKey } from '../functions/SortArrayOfObjectByKey';
 
+/**
+ * Component for displaying champion's list at home page
+*/
 export default function Dashboard() {
   const token = '6Vfg1oVtqrBMS2AxDm3HH2Rrq8kWQf9z0XBGyGeBIM9d2p72RG4'; // token used while access champions api
   const [champions, setChampions] = useState([]); // champions list in array

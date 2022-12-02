@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * JSX Component for displaying modal of champion's detail
+
+ * @prop {object} champion contain all details of a champion
+*/
 export default function ChampionModal({ champion }) {
   const {
     id, name, armor, armorperlevel, attackrange, attackdamageperlevel, videogame_versions,

@@ -4,6 +4,11 @@ import { addToWatchList, removeFromWatchList } from '../actions/index';
 import { Link } from 'react-router-dom';
 import ChampionModal from './ChampionModal';
 
+/**
+ * JSX Component for displaying the champions card
+
+ * @prop {object} champion contain all details of a champion
+*/
 export default function ChampionCard({ champion }) {
   const [currentUser, watchList] = useSelector((state) => [state.updateCurrentUser, state.updateWatchList]);
   const dispatch = useDispatch();

@@ -6,6 +6,9 @@ import { logInUser } from '../actions/index';
 import ApiCall from './ApiCall';
 import UserProfile from './UserProfile';
 
+/**
+ * Component for header contains logo, watchlistr icon and login/logout
+*/
 export default function HeaderFooter() {
 	const [currentUser, watchList] = useSelector((state) => [state.updateCurrentUser, state.updateWatchList]);
 	const watchList_length = watchList.length;

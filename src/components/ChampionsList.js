@@ -1,6 +1,11 @@
 import React from 'react';
 import ChampionCard from './ChampionCard';
 
+/**
+ * Component for displaying champion's card in grid view
+
+ * @prop {array} champions array of object contains list of champion
+*/
 export default function ChampionsList({ champions }) {
 
   return (

@@ -1,5 +1,12 @@
 import React from 'react';
 
+/**
+ * Component for Pagination button
+
+ * @prop {integer} page used for current page number
+ * @prop {function} setPage used to update page number
+ * @prop {boolean} disable used to disable page navigation button
+*/
 export default function Pagination({ page, setPage, disable = true }) {
 	return (
 		<>

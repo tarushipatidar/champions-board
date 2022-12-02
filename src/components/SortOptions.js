@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Component for sort option for champions
+
+ * @prop {function} updateSortType used to update sort type
+*/
 export default function SortOptions({ updateSortType }) {
 	return (
 		<div className="p-2 bd-highlight">

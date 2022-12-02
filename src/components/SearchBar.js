@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * Component for search bar
+
+ * @prop {string} setSearchText used for search champions
+ * @prop {function} setPage used to update page number
+*/
 export default function SearchBar({ setSearchText, setPage }) {
 	return (
 		<div className="p-2 bd-highlight" >

@@ -67,7 +67,7 @@ export default function HeaderFooter() {
 			<div className='container-fluid padding-10' style={{ paddingBottom: '60px' }}>
 				{/* Message Box */}
 				<div className="alert alert-warning alert-dismissible" id='message-box' style={{display: 'none'}}>
-					<span id='message'></span>
+					<center><strong id='message'></strong></center>
 					<button type="button" className="btn-close" onClick={(e) => e.target.parentNode.style.display = "none"} aria-label="Close"></button>
 				</div>
 

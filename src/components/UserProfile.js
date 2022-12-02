@@ -13,16 +13,18 @@ export default function UserProfile() {
 			<div className="dropstart">
 				<img src={picture} className="profile-image dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="<image not found>" />
 				<ul className="dropdown-menu">
+					{/* User Profile Picture */}
 					<li className='dropdown-item'>
 						<img src={picture} className='user-profile' alt="image not found" />
 					</li>
-					<li className='dropdown-item'>
-						{name}
-					</li>
+					
+					{/* User EmailId */}
 					<li className='dropdown-item'>
 						{email}
 					</li>
-					<li className='dropdown-item'>
+
+					{/* LogOut Option */}
+					<li className='dropdown-item' style={{background: '#372526'}}>
 						<Link onClick={() => {
 							dispatch(logOutUser());
 							dispatch({ type: 'RESETWATCH' });

@@ -1,0 +1,27 @@
+.dropstart .dropdown-menu[data-bs-popper] {
+	background: #e0d0d1;
+	border: solid;
+}
+
+.dropdown-item {
+	text-align: center;
+}
+
+.dropdown-item:hover {
+	background-color: #e0d0d1;
+}
+
+.profile-image {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.logout-link, .logout-link:hover {
+  color: white;
+}
+
+.user-profile {
+	width: 8rem;
+	border: 1px solid #372526;
+	border-radius: 50%;
+}

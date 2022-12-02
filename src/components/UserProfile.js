@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logOutUser } from '../actions';
+import ShowMessage from './ShowMessage';
 
 export default function UserProfile() {
 	const { email, name, picture } = useSelector((state) => state.updateCurrentUser);
@@ -25,6 +26,7 @@ export default function UserProfile() {
 						<Link onClick={() => {
 							dispatch(logOutUser());
 							dispatch({ type: 'RESETWATCH' });
+							ShowMessage('Successfully Logged Out!');
 						}}
 						className="logout-link">
 							<h4>LogOut</h4>

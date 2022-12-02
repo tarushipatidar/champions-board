@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logInUser } from '../actions/index';
 import ApiCall from './ApiCall';
 import UserProfile from './UserProfile';
+import ShowMessage from './ShowMessage';
 
 /**
  * Component for header contains logo, watchlistr icon and login/logout
@@ -22,8 +23,8 @@ export default function HeaderFooter() {
 		onSuccess: response => {
 			ApiCall('GET', 'https://www.googleapis.com/oauth2/v3/userinfo', { headers: { 'Authorization': `Bearer ${response.access_token}` } })
 				.then((res) => {
-					console.log(res);
 					dispatch(logInUser(res));
+					ShowMessage('Successfully Logged In!');
 				})
 				.catch((error) => console.log(error));
 		}
@@ -64,6 +65,12 @@ export default function HeaderFooter() {
 
 			{/* Body */}
 			<div className='container-fluid padding-10' style={{ paddingBottom: '60px' }}>
+				{/* Message Box */}
+				<div className="alert alert-warning alert-dismissible" id='message-box' style={{display: 'none'}}>
+					<span id='message'></span>
+					<button type="button" className="btn-close" onClick={(e) => e.target.parentNode.style.display = "none"} aria-label="Close"></button>
+				</div>
+
 				<Outlet />
 				<br />
 			</div>

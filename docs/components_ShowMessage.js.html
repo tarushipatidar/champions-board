@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ApiCall.js</title>
+    <title>JSDoc: Source: components/ShowMessage.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ApiCall.js</h1>
+    <h1 class="page-title">Source: components/ShowMessage.js</h1>
 
     
 
@@ -26,32 +26,20 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
+            <pre class="prettyprint source linenums"><code>/**
+ * This method is used for displaying the message on the Page
 
-/**
- * ApiCall method calls axios for api fetch
-
- * @param   {string} method should be one out of 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'
- * @param   {string} url must be an string with http or https
- * @param   {object} data can contains headers value
- * @return  return json data from url or error
+ * @param   {string} msg it's a message which is going to be display on the message-board
 */
-const ApiCall = async (method, url, data = {}) => {
-	try {
-		switch (method) {
-			case 'GET': {
-				return await axios.get(url, data).then((response) => response.data);
-			};
-			default: {
-				return await axios.get(url, data).then((response) => response.data);
-			};
-		}
-	} catch (error) {
-		console.log(error);
-	}
+const ShowMessage = (msg) => {
+  document.getElementById('message').innerHTML = msg;
+  document.getElementById('message-box').style.display = "block";
+  setTimeout(function() { 
+    document.getElementById('message-box').style.display = "none";
+  }, 10000);
 }
 
-export default ApiCall;
+export default ShowMessage;
 </code></pre>
         </article>
     </section>

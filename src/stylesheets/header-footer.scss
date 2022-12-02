@@ -58,3 +58,9 @@ a, a:hover {
   border: 2px solid #372526;
   padding: 2px;
 }
+
+.alert-warning {
+  --bs-alert-color: #372526;
+  --bs-alert-bg: #eee1e191;
+  --bs-alert-border-color: #372526;
+}

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToWatchList, removeFromWatchList } from '../actions/index';
 import { Link } from 'react-router-dom';
 import ChampionModal from './ChampionModal';
+import ShowMessage from './ShowMessage';
 
 /**
  * JSX Component for displaying the champions card
@@ -21,7 +22,7 @@ export default function ChampionCard({ champion }) {
 
   const updateToWatchList = (e, type) => {
     if (Object.keys(currentUser).length === 0) {
-      alert('You Need To Login First!');
+      ShowMessage('You Need To Login First!');
     } else {
       let champion = JSON.parse(e.target.value);
       if (type === 'Add') {
